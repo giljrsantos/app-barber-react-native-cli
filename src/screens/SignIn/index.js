@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
     Container,
     InputArea,
@@ -15,6 +15,10 @@ import LockIcon from '../../assets/lock.svg';
 import SignInput from '../../components/signinput';
 
 export default () => {
+
+    const [ emailField, setEmailField ] = useState('');
+    const [ passwordField, setPasswordField ] = useState('');
+
     return (
         <Container>
             <BarberLogo width="100%" height="160" />
@@ -24,10 +28,15 @@ export default () => {
                 <SignInput 
                     IconSvg={EmailIcon}
                     placeholder="Digite seu e-mail"
+                    value={emailField}
+                    onChangeText={t => setEmailField(t)}
                 />
                 <SignInput 
                     IconSvg={LockIcon}
                     placeholder="Digite sua senha"
+                    value={passwordField}
+                    onChangeText={t => setPasswordField(t)}
+                    password={true}
                 />
 
                 <CustomButton>
@@ -35,7 +44,7 @@ export default () => {
                 </CustomButton>
             </InputArea>
 
-            <SignMessageButton>
+            <SignMessageButton onPress={handleMessageButtonClick}>
                 <SignMessageButtonText>Ainda não possui uma conta?</SignMessageButtonText>
                 <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
             </SignMessageButton>
