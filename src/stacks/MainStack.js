@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 export default () => (
     <Stack.Navigator
-        initialRouteName="SignUp"
+        initialRouteName="Preload"
         screenOptions={{
             headerShown: false
         }}

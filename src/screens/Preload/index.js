@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { Container, LoadingIcon } from './styles';
+import { UserContext } from '../../contexts/UserContext';
+import Api from '../../services/Api';
 
 import BarberLogo from '../../assets/barber.svg';
 
 export default () => {
+
+    const { dispatch: userDispatch } = useContext(UserContext);
 
     const navigation = useNavigation();
     useEffect(() => {
@@ -14,6 +18,26 @@ export default () => {
 
             if(token){
                 //validar token
+                let res = await Api.checkToken(token);
+                if(res.token){
+
+                    await AsyncStorage.setItem('token', res.token);
+
+                    userDispatch({
+                        type: 'setAvatar',
+                        payload:{
+                            avatar: res.data.avatar
+                        }
+                    });
+    
+                    navigation.reset({
+                        routes: [{name: 'MainTab'}]
+                    });
+
+                }else{
+                    //envia para a tela de login
+                    navigation.navigate('SignIn');                    
+                }
             }else{
                 //envia para a tela de login
                 navigation.navigate('SignIn');
