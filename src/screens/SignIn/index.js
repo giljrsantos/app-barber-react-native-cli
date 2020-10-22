@@ -19,6 +19,14 @@ export default () => {
     const [ emailField, setEmailField ] = useState('');
     const [ passwordField, setPasswordField ] = useState('');
 
+    const handleSignClick = () => {
+        
+    }
+
+    const handleMessageButtonClick = () => {
+        
+    }
+
     return (
         <Container>
             <BarberLogo width="100%" height="160" />
@@ -39,7 +47,7 @@ export default () => {
                     password={true}
                 />
 
-                <CustomButton>
+                <CustomButton onPress={handleSignClick}>
                     <CustomButtonText>LOGIN</CustomButtonText>
                 </CustomButton>
             </InputArea>
