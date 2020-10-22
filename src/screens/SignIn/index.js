@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native'
 import { 
     Container,
     InputArea,
@@ -16,6 +17,8 @@ import SignInput from '../../components/signinput';
 
 export default () => {
 
+    const navigation = useNavigation();
+
     const [ emailField, setEmailField ] = useState('');
     const [ passwordField, setPasswordField ] = useState('');
 
@@ -24,7 +27,9 @@ export default () => {
     }
 
     const handleMessageButtonClick = () => {
-        
+        navigation.reset({
+            routes: [{ name: 'SignUp'}]
+        })
     }
 
     return (
