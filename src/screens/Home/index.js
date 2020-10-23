@@ -53,11 +53,11 @@ export default () => {
             setLoading(true);
             setLocationText('');
             setList([]);
-            console.log(result);
+            //console.log(result);
             Geolocation.getCurrentPosition(       
                 coords => {
-                    setCoords({coords});
-                    console.log(coords.coords);
+                    setCoords(coords);
+                    //console.log(coords.coords.latitude);
                     getBarbers();
                 },
                 error => {
@@ -77,7 +77,15 @@ export default () => {
         setLoading(true);
         setList([]);
 
-        let res = await Api.getBarbers();
+        let lat = null;
+        let lng = null;
+
+        if(coords){
+            lat = coords.coords.latitude;
+            lng = coords.coords.longitude;
+        }
+
+        let res = await Api.getBarbers(lat, lng, locationText);
         //console.log(res);
         if(res.error == ''){
             if(res.loc){
@@ -100,6 +108,11 @@ export default () => {
         getBarbers();
     }
 
+    const hanleLocationSearch = () => {
+        setCoords({});
+        getBarbers();
+    }
+
     return(
         <Container>
             <Scroller refreshControl={
@@ -119,6 +132,7 @@ export default () => {
                         placeholderTextColor="#fff"
                         value={locationText}
                         onChangeText={t => setLocationText(t)}
+                        onEndEditing={hanleLocationSearch}
                     />
                     <LocationFinder onPress={handleLocationFinder}>
                         <MyLocationIcon width="24" height="24" fill="#fff" />
