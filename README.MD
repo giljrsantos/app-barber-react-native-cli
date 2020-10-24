@@ -4,7 +4,9 @@ App para agendamento para barbeiros. O Barbeiro faz o seu cadastro no App. Quand
 
 ## 1 - Página Preload
 
-        Quando abre o App é a página que verifica se o usuário tem um TOKEN para acessar. Caso ele não tenha nenhum TOKEN de acesso, ele é redirecionado para a tela de login. 
+        Quando abre o App é a página que verifica se o usuário tem um TOKEN para acessar.
+        
+         Caso ele não tenha nenhum TOKEN de acesso, ele é redirecionado para a tela de login. 
 
 ## 2 – Página SigIn
 	
