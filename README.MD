@@ -10,7 +10,9 @@ App para agendamento para barbeiros. O Barbeiro faz o seu cadastro no App. Quand
 
 ## 2 – Página SigIn
 	
-        Na página de login o usuário deve informar o e-mail e também a senha. Se não tiver cadastro, basta clicar no botão informando que não cadastrado, que será redirecionado para a pagina de cadastro.
+        Na página de login o usuário deve informar o e-mail e também a senha.
+        
+        Se não tiver cadastro, basta clicar no botão informando que não cadastrado, que será redirecionado para a pagina de cadastro.
 
 ## 3 – Página SignUp
 	
@@ -18,9 +20,15 @@ App para agendamento para barbeiros. O Barbeiro faz o seu cadastro no App. Quand
 
 ## 4 – Página Home
 	
-        Na página Home, o sistema vai listar os Barbeiros cadastrado. E o usuário pode clicar no botão para o sistema buscar a localidade, e listar os Barbeiros cadastrado naquela localidade. Pode informar o nome da cidade e pressionar o ENTER para buscar os barbeiros daquela localidade.
+        Na página Home, o sistema vai listar os Barbeiros cadastrado.
+        
+        E o usuário pode clicar no botão para o sistema buscar a localidade, e listar os Barbeiros cadastrado naquela localidade. 
+        
+        Pode informar o nome da cidade e pressionar o ENTER para buscar os barbeiros daquela localidade.
 
-        Ao listar os barbeiros, o sistema vai mostrar a nota, em forma de número e também através de estrelas. Existe o botão ver o perfil do barbeiro. 
+        Ao listar os barbeiros, o sistema vai mostrar a nota, em forma de número e também através de estrelas. 
+        
+        Existe o botão ver o perfil do barbeiro. 
 
 ---
 # 📱 App
